@@ -32,6 +32,10 @@
                   <%= link_to 'マイページ', user_path(current_user) %>
                 </li>
                 <li role="separator" class="divider"></li>
+                <li><%= link_to '仕事登録', jobs_new_path%></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to '仕事検索', jobs_index_path%></li>
+                <li role="separator" class="divider"></li>
                 <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
               </ul>
             </li>  

@@ -1,0 +1,26 @@
+<% content_for(:title) do %>
+  仕事検索
+<% end %>
+
+<%= search_form_for(@q, url: search_path, html: { method: :get, class: 'form-horizontal', role: 'form' }) do |f| %>
+  <%= render 'search_form', f: f %>
+<% end %>
+
+<%= render layout: 'shared/search_result_box' do %>
+  <table class="table table-list ">
+  <thead>
+    <tr>
+      <th>仕事名</th>
+      <th>カテゴリ</th>
+    </tr>
+  </thead>
+  <% @job.each do |job| %>
+  <tbody>
+  <tr>
+    <td><%= job.name %> </td>
+    <td><%= job.category_id %></td>
+  </tr>
+  </tbody>
+<% end %>
+</table>
+<% end %>
