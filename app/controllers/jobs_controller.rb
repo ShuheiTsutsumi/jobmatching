@@ -1,12 +1,15 @@
 class JobsController < ApplicationController
   def index
     @q = Job.ransack(params[:q])
-    @job = @q.result.includes(:name, :category_id)
+    @job = @q.result
+#    @job = @q.result.includes(:name, :category_id)
   end
 
  def search
     @q = Job.search(search_params)
-    @job = @q.result.includes(:name, :category_id)
+    @job = @q.result
+#    @job = @q.result.includes(:name, :category_id)
+
  end
 
   def show
